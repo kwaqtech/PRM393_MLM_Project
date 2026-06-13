@@ -1,0 +1,48 @@
+name: mini_library_management
+description: "Mini Library Management - A Flutter mobile app for university library book browsing and borrowing."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # Firebase
+  firebase_core: any
+  firebase_auth: any
+  cloud_firestore: any
+  firebase_storage: any
+
+  # State Management
+  provider: ^6.1.2
+
+  # Google Maps (Temporarily Disabled)
+  # google_maps_flutter: ^2.12.1
+
+  # UI & Utilities
+  cached_network_image: ^3.4.1
+  image_picker: ^1.1.2
+  intl: any
+  uuid: ^4.5.1
+  timeago: ^3.7.0
+  logger: ^2.7.0
+  firebase_app_check: ^0.4.4+2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+  mockito: ^5.4.5
+  build_runner: ^2.4.14
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
