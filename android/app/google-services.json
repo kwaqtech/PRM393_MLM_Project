@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1064075138569",
+    "project_id": "mini-library-management",
+    "storage_bucket": "mini-library-management.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064075138569:android:59dd7928804ed00de78ad8",
+        "android_client_info": {
+          "package_name": "com.example.mini_library_management"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkmJuzygmrboW-NDoQcjQFns42SDjX2Ks"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

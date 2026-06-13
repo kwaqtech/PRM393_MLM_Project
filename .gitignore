@@ -26,7 +26,6 @@ build/
 pubspec.lock
 
 # Firebase Configs
-google-services.json
-GoogleService-Info.plist
-firebase_options.dart
+# google-services.json
+# firebase_options.dart
 firebase-app-id.json
