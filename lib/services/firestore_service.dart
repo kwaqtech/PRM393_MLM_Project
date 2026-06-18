@@ -214,7 +214,11 @@ class FirestoreService {
     }
 
     // Create a new chat room
-    final room = ChatRoomModel(id: '', participants: participants);
+    final room = ChatRoomModel(
+      id: '',
+      participants: participants,
+      lastMessageAt: DateTime.now(),
+    );
     final docRef = await _db
         .collection(AppConstants.chatRoomsCollection)
         .add(room.toFirestore());

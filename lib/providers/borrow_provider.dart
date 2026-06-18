@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../models/book_model.dart';
 import '../models/borrow_model.dart';
+import '../models/notification_model.dart';
 import '../models/user_model.dart';
 import '../services/firestore_service.dart';
 import '../utils/constants.dart';
@@ -163,6 +164,18 @@ class BorrowProvider extends ChangeNotifier {
         newStatus: AppConstants.statusApproved,
         bookId: borrow.bookId,
       );
+
+      // Notify student
+      await _firestoreService.addNotification(
+        NotificationModel(
+          id: '',
+          userId: borrow.userId,
+          title: 'Borrow Approved',
+          message: 'Your request to borrow "${borrow.bookTitle}" has been approved.',
+          createdAt: DateTime.now(),
+        ),
+      );
+
       return true;
     } catch (e, st) {
       AppLogger.error('Failed to approve borrow', e, st);
@@ -181,6 +194,18 @@ class BorrowProvider extends ChangeNotifier {
         bookId: borrow.bookId,
         restoreCopy: true, // pending request had decremented copies
       );
+
+      // Notify student
+      await _firestoreService.addNotification(
+        NotificationModel(
+          id: '',
+          userId: borrow.userId,
+          title: 'Borrow Rejected',
+          message: 'Your request to borrow "${borrow.bookTitle}" has been rejected.',
+          createdAt: DateTime.now(),
+        ),
+      );
+
       return true;
     } catch (e, st) {
       AppLogger.error('Failed to reject borrow', e, st);
@@ -199,6 +224,18 @@ class BorrowProvider extends ChangeNotifier {
         bookId: borrow.bookId,
         returnDate: DateTime.now(),
       );
+
+      // Notify student
+      await _firestoreService.addNotification(
+        NotificationModel(
+          id: '',
+          userId: borrow.userId,
+          title: 'Book Returned',
+          message: 'You have successfully returned "${borrow.bookTitle}".',
+          createdAt: DateTime.now(),
+        ),
+      );
+
       return true;
     } catch (e, st) {
       AppLogger.error('Failed to mark as returned', e, st);
